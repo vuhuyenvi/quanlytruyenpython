@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+{% extends "pages/layout.html" %}
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    {% block content %}
+    <h2 class="w-100 text-center p-3 text-danger">Thêm thể loại</h2>
+    <form action="/SachT12/themloai" method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Thêm loại"/>
+    </form>
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    {% extends "pages/layout.html" %}
+    <title></title>
+</head>
+<body>
+    {%block content%}
+    <table class="table w-75">
+        <thead class="thead-dark bg-dark">
+            <tr>
+                <td>Mã</td>
+                <td>Tên sách</td>
+                <td>Đơn giá</td>
+                <td>Thể loại</td>
+            </tr>
+        </thead>
+        {% for tl in DM_SP %}
+        <tr>
+            <td>{{tl.id}}</td>
+            <td>{{tl.TenSP}}</td>
+            <td>{{tl.DonGia}}</td>
+            <td>{{tl.ML_id.TenLoai}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endblock %}
+</body>
+</html>

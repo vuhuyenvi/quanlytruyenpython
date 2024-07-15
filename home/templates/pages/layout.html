@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>{% block title %}Django App{% endblock %}</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"
+          type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body id="body-pd">
+    <div class="container-fluid p-4 bg-primary text-white text-center">
+        <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="mynavbar">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="/TrangChu/dn">Đăng nhập</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="/TrangChu/dk">Đăng ký</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="javascript:void(0)">Giỏ hàng</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="container-fluid mt-3">
+                    <table class="table">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Danh mục loại</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><a href="/TrangChu/themloai" class="text-decoration-none text-dark">Thêm loại mới</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="/TrangChu/dstheloai" class="text-decoration-none text-dark">Hiển thị danh sách loại</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table">
+                        <thead class="table-success">
+                            <tr>
+                                <th>Danh mục sản phẩm</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Thêm sản phẩm mới</td>
+                            </tr>
+                            <tr>
+                                <td><a href="/TrangChu/hienthisp" class="text-decoration-none text-dark">Hiển thị sản phẩm</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="/TrangChu/hienthidssp" class="text-decoration-none text-dark">Hiển thị danh sách sản phẩm</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table">
+                        <thead class="table-warning">
+                            <tr>
+                                <th>Danh mục khách hàng</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Thêm khách hàng mới</td>
+                            </tr>
+                            <tr>
+                                <td>Hiển thị khách hàng</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                {% block content %}
+
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid p-3 bg-success text-white text-center">
+        <h1>Footer</h1>
+    </div>
+    
+</body>
+</html>
